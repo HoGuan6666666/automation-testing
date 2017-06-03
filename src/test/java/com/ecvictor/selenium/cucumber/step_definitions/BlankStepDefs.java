@@ -10,11 +10,12 @@ import cucumber.api.java.en.When;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
-public class BlankStepDefs {
-    public WebDriver driver = Hooks.driver;
+public class BlankStepDefs{
+    public WebDriver driver;
 
-    public BlankStepDefs() {
-        Log.startTestCase(BlankStepDefs.class.getName());
+    public BlankStepDefs()
+    {
+    	driver = Hooks.driver;
     }
 
     @When("^I open seleniumframework website$")
