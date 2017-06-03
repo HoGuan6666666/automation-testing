@@ -9,10 +9,10 @@ import static org.testng.AssertJUnit.assertEquals;
 
 
 public class GoogleStepDefs {
-    public WebDriver driver = Hooks.driver;
+    public WebDriver driver ;
 
     public GoogleStepDefs() {
-
+        driver = Hooks.driver;
     }
 
     @When("^I open google website$")

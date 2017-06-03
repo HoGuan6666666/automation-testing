@@ -18,12 +18,13 @@ import cucumber.api.java.en.When;
 
 
 public class ShoppingCart {
-    public WebDriver driver = Hooks.driver;
+    public WebDriver driver;
     //    public List<HashMap<String,String>> datamap = DataHelper.data();
     public static List<HashMap<String, String>> datamap = null;
 
 
     public ShoppingCart() {
+        driver = Hooks.driver;
         datamap = new ArrayList<HashMap<String, String>>();
         HashMap<String, String> sampleData = new HashMap<String, String>();
         sampleData.put("username", "abc@xyz.com");
