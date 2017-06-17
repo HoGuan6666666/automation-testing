@@ -34,8 +34,7 @@ public class ProductTest {
      */
     @Test
     public void testGetMyIp() {
-        expect().statusCode(200);
-        expect().body("ip", equalTo("76.65.249.106"))
+        expect().statusCode(200).body("ip", equalTo("76.65.249.106"))
                 .contentType("application/json; charset=ISO-8859-1")
                 .given()
                 .when().get("http://ip.jsontest.com");
@@ -60,9 +59,9 @@ public class ProductTest {
      */
     @Test
     public void testGetECVLocation() {
-        expect().statusCode(200);
-        expect().body("results[0].address_components[2].long_name", equalTo("Sherbrooke Street West"))
+        expect().statusCode(200).body("results[0].address_components[2].long_name", equalTo("Sherbrooke Street West"))
                 .contentType("application/json; charset=UTF-8")
+                .log().all()
                 .given()
                 .when().get("https://maps.googleapis.com/maps/api/geocode/json?address=ecvictor");
     }
