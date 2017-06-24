@@ -18,7 +18,7 @@ import static org.hamcrest.core.IsEqual.equalTo;
  * Created by caoc on 2/22/16.
  * Copyright (c) 2015 Service ECVictor Inc. All rights reserved.
  */
-public class ProductTest {
+public class TimelineTest {
     private String token;
     Properties prop = RestAssuredUtil.getProperties();
 
@@ -36,10 +36,11 @@ public class ProductTest {
      */
     @Test
     public void testGetUserTimeline() {
-        expect().statusCode(200);
-        expect().body("[0].id_str", equalTo("850726222111924225"))
+        expect().statusCode(200)
+                .body("[0].id_str", equalTo("850726222111924225"))
+                .log().all()
                 .contentType("application/json;charset=utf-8")
-                .given().auth().oauth("fu0Q7boXTSmGwbJr2UbNKacT8","VRXWN4xWUv5KvNAgRYmvqUlnDl6jBgEZKmVJpEMx47ouBTH1Tn",
+                .given().auth().oauth("XmSm0xDZB6FJlEliDJhRMEEPY","XtJV5zXKUhGkBQtDZ0ETmX1n8s3SSu5yM72pTSMgjhhBXNrRrr",
                 "846843580882866176-rgW5abXjp2KJZwqUSSgFa3ayNQ8jRzL","Z6Xwl8HryhevFxlagXbVFILeQlaVATGZQVMvlpUKalAn3")
                 .when().get("https://api.twitter.com/1.1/statuses/user_timeline.json");
     }    /**
@@ -50,8 +51,8 @@ public class ProductTest {
         expect().statusCode(200);
         expect().body("id_str", equalTo(Collections.singletonList("848231288238735362")))
                 .contentType("application/json;charset=utf-8")
-                .given().auth().oauth("fu0Q7boXTSmGwbJr2UbNKacT8","VRXWN4xWUv5KvNAgRYmvqUlnDl6jBgEZKmVJpEMx47ouBTH1Tn",
-                "846843580882866176-rgW5abXjp2KJZwqUSSgFa3ayNQ8jRzL","Z6Xwl8HryhevFxlagXbVFILeQlaVATGZQVMvlpUKalAn3")
+                .given().auth().oauth("FZgc5QTn0OIW8Qvln7F6pdoi6","WoqPhr1HrwsjdYKnyAj3BScMD6Dd8K6SsvZxxPCjF41YFMrTuR",
+                "846843580882866176-nftaoCwd5WQKZz11KBZoq6MBEG9AcNf","3yK3sI82l4ZMR0e2HKgLgIQ68g2TssxEoodG1OuzSsPsX")
                 .param("status", "Post from Rest Assured")
                 .when().post("https://api.twitter.com/1.1/statuses/update.json");
     }

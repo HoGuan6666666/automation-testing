@@ -28,9 +28,9 @@ public class RestAssuredUtil {
     public static final void setup() {
 
         Properties prop = getProperties();
-        RestAssured.baseURI = prop.getProperty("url");
+//        RestAssured.baseURI = prop.getProperty("url");
 //        RestAssured.basePath = prop.getProperty("basePath");
-        RestAssured.port = Integer.parseInt(prop.getProperty("port"));
+//        RestAssured.port = Integer.parseInt(prop.getProperty("port"));
         // we want all the details for failed tests
         RestAssured.config().httpClient(httpClientConfig().setParam("CONNECTION_MANAGER_TIMEOUT", 10000));;
         RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
