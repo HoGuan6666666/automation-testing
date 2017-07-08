@@ -38,7 +38,7 @@ public class DemoStoreTest {
     public void demoStoreTest(String sUsername, String sPassword) {
 
         String chromeDriverLocation = System.getProperty("user.dir") + "/src/test/resources/drivers/chromedriver";
-        System.out.println();
+        System.out.println("chromeDriverLocation"+chromeDriverLocation);
         System.setProperty("webdriver.chrome.driver", chromeDriverLocation);
         driver = new ChromeDriver();
 
