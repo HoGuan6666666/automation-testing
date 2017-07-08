@@ -3,6 +3,8 @@ package com.ecvictor.testng.employee;
 /**
  * Created by ccao on 2017-04-29.
  */
+
+import java.awt.*;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -25,7 +27,7 @@ public class DemoStoreTest {
 
     public static Object[][] credentials() {
 
-        return new Object[][] { { "testuser_1", "Test@123" }, { "testuser_2", "Test@123" }};
+        return new Object[][]{{"testuser_1", "Test@123"}, {"testuser_2", "Test@123"}};
 
     }
 
@@ -35,7 +37,9 @@ public class DemoStoreTest {
 
     public void demoStoreTest(String sUsername, String sPassword) {
 
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
+        String currentLocation = System.getProperty("user.dir");
+        System.out.println("Current Location: "+currentLocation);
+        System.setProperty("webdriver.chrome.driver", currentLocation+"/src/test/resources/drivers/chromedriver");
         driver = new ChromeDriver();
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
