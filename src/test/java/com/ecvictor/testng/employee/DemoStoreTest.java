@@ -37,9 +37,9 @@ public class DemoStoreTest {
 
     public void demoStoreTest(String sUsername, String sPassword) {
 
-        String currentLocation = System.getProperty("user.dir");
-        System.out.println("Current Location: "+currentLocation);
-        System.setProperty("webdriver.chrome.driver", currentLocation+"/src/test/resources/drivers/chromedriver");
+        String chromeDriverLocation = System.getProperty("user.dir") + "/src/test/resources/drivers/chromedriver";
+        System.out.println();
+        System.setProperty("webdriver.chrome.driver", chromeDriverLocation);
         driver = new ChromeDriver();
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
