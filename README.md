@@ -9,6 +9,13 @@ This is a template project that includes five testing framework
 
 
 # Setup Environment
+## IDEA 
+* Internet Download Page
+  * https://www.jetbrains.com/idea/download/#section=mac
+* Local Download
+
+  * macOS http://192.168.88.187:8080/idea.dmg
+  * Windows http://192.168.88.187:8080/idea.exe
 
 ## JDK
 The major java version used in the project is java1.8
@@ -44,3 +51,15 @@ The project is managed by maven
 ## Cucumber Framework
 
     http://www.seleniumframework.com/cucumber-jvm-3/cucumber-jvm-and-selenium/
+
+
+## Terminal and Start / Stop daemon in Mac
+
+You want to use launchctl to start and stop Jenkins.
+
+Start Jenkins: sudo launchctl load /Library/LaunchDaemons/org.jenkins-ci.plist
+
+Stop Jenkins: sudo launchctl unload /Library/LaunchDaemons/org.jenkins-ci.plist
+
+sudo launchctl unload /Library/LaunchDaemons/org.jenkins-ci.plist
+sudo mv /Library/LaunchDaemons/org.jenkins-ci.plist /Library/LaunchAgents/org.jenkins-ci.plist
