@@ -9,13 +9,6 @@ This is a template project that includes five testing framework
 
 
 # Setup Environment
-## IDEA 
-* Internet Download Page
-  * https://www.jetbrains.com/idea/download/#section=mac
-* Local Download
-
-  * macOS http://192.168.88.187:8080/idea.dmg
-  * Windows http://192.168.88.187:8080/idea.exe
 
 ## JDK
 The major java version used in the project is java1.8
@@ -27,6 +20,13 @@ The major java version used in the project is java1.8
     
     http://www.seleniumframework.com/cucumber-jvm-3/install-java-jdk/
 
+## IDEA 
+* Internet Download Page
+  * https://www.jetbrains.com/idea/download/#section=mac
+* Local Download
+
+  * macOS http://192.168.88.187:8080/idea.dmg
+  * Windows http://192.168.88.187:8080/idea.exe
 ## Maven
 The project is managed by maven
 * Downloading page
