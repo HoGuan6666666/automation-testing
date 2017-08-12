@@ -1,59 +1,49 @@
 package com.ecvictor.calculator;
 
-import org.junit.Assert;
+import org.junit.After;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
-import static com.ecvictor.calculator.ThrowableAssertion.assertThrown;
-
+import static org.junit.Assert.*;
 
 /**
- * Created by caoc on 3/18/2017.
+ * Created by ccao on 2017-08-12.
  */
 public class CalculatorTest {
-    @Rule
-    public final ExpectedException exception = ExpectedException.none();
-
-    private Calculator calculator;
-
     @Before
     public void setUp() {
-        calculator = new Calculator();
+        System.out.println("Test starts: ...");
     }
+
 
     @Test
     public void add() throws Exception {
-        Assert.assertTrue(Calculator.add(1, 2) == 3);
+        Calculator.add(1, 2);
+        assertEquals(3, Calculator.add(1, 2));
+        assertEquals("1+2 should be 4.", 4, Calculator.add(1, 2));
+        assertTrue(Calculator.add(1, 2) == 3);
     }
 
     @Test
     public void divide() throws Exception {
-        Assert.assertTrue(calculator.divide(1, 2) == 0);
-        Assert.assertEquals("1/2 should be 0",
-                0, calculator.divide(1, 2));
+        Calculator calculator = new Calculator();
+        assertNotEquals(3, calculator.divide(1, 2));
     }
 
     @Test(expected = ArithmeticException.class)
     public void divideByZero() throws Exception {
-        calculator.divide(1, 0);
+        Calculator calculator = new Calculator();
+        assertNotEquals(3, calculator.divide(1, 0));
     }
 
     @Test
-    public void divideByZero2() throws Exception {
-        exception.expect(ArithmeticException.class);
-        calculator.divide(1, 0);
-
+    public void multiple() throws Exception {
+        Calculator calculator = new Calculator();
+        calculator.multiple(1, 0);
     }
 
-
-    @Test
-    public void divideByZero3() throws Exception {
-//            http://blog.codeleak.pl/2014/07/junit-testing-exception-with-java-8-and-lambda-expressions.html
-
-//            assertThrown(new Calculator()::divide(1,0))
+    @After
+    public void shutDown() {
+        System.out.println("Test shut down.");
     }
-
-
 }

@@ -29,10 +29,14 @@ public class JusteatTest {
         if (os.equalsIgnoreCase("Mac OS X"))
             System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
         else System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
+
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--kiosk");
+
         driver = new ChromeDriver(chromeOptions);
+
         baseUrl = "https://www.just-eat.ca/";
+
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
@@ -45,6 +49,13 @@ public class JusteatTest {
         driver.findElement(By.id("homepage-search-fullAddress")).sendKeys("Service ECVictor Inc., Sherbrooke Street West, Montreal, QC, Canada");
         driver.findElement(By.xpath("/html/body/section/div[2]/div/div/div[1]/ul/li[1]")).click();
         assertEquals("Zanga Sushi", driver.findElement(By.cssSelector("h3.listing-item-title")).getText());
+         }
+    @Test
+    public void testPizzaDelivery() throws Exception {
+        driver.get(baseUrl);
+        driver.findElement(By.xpath("//a[@href='/account/login/?returnurl=%2F']")).click();
+        assertEquals("Login with",
+                driver.findElement(By.xpath("//h1[@class='beta form-title']")).getText());
     }
 
     @Test

@@ -43,6 +43,11 @@ The project is managed by maven
 
     `brew install maven`
 
+## Download Old Version Firefox
+
+`https://www.mozilla.org/en-US/firefox/releases/
+`
+Version 52.0 would be a good candidate for xpath checker and Selenium IDE.
 
 ## Git
 
