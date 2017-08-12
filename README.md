@@ -47,7 +47,10 @@ The project is managed by maven
 
 `https://www.mozilla.org/en-US/firefox/releases/
 `
+
 Version 52.0 would be a good candidate for xpath checker and Selenium IDE.
+
+`https://ftp.mozilla.org/pub/firefox/releases/52.0.1/`
 
 ## Git
 
