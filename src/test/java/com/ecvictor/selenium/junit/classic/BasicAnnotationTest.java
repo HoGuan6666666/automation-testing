@@ -1,4 +1,4 @@
-package com.ecvictor.selenium.junit;
+package com.ecvictor.selenium.junit.classic;
 import org.junit.*;
 /**
  * Created by ccao on 2017-05-27.

@@ -1,19 +1,18 @@
-package com.ecvictor.selenium.junit;
+package com.ecvictor.selenium.junit.page_object_design;
 
-import java.util.regex.Pattern;
-import java.util.concurrent.TimeUnit;
-
-import org.junit.*;
-
-import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
-
+import com.ecvictor.selenium.junit.page_object_design.page_object.homePage.HomePage;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
+
+import java.util.concurrent.TimeUnit;
+
+import static org.junit.Assert.fail;
 
 public class ConcordiaTest {
     private WebDriver driver;
@@ -44,22 +43,21 @@ public class ConcordiaTest {
     @Test
     public void testAbout() throws Exception {
         driver.get(baseUrl + "/");
-        driver.findElement(By.xpath("//a[@href=\"/about.html\" and @class]")).click();
+        HomePage homePage=new HomePage(driver);
+        homePage.click_about();
+    }
+    @Test
+    public void testAcademics() throws Exception {
+        driver.get(baseUrl + "/");
+        HomePage homePage=new HomePage(driver);
+        homePage.clickAcademics();
+    }
 
-        while (timeout > 0) {
-            String name = driver.getTitle();
-            if (name.equals("About")) {
-                System.out.println("Found the Graduate admissions: " + timeout);
-                break;
-            } else {
-                System.out.println("Not found the Graduate admissions,wait 500 ms");
-                Thread.sleep(interval);
-                timeout -= interval;
-            }
-        }
-        if (timeout <= 0)
-            Assert.fail("Test failed");
-
+    @Test
+    public void testAdmissions() throws Exception {
+        driver.get(baseUrl + "/");
+        HomePage homePage=new HomePage(driver);
+        homePage.clickAdmissions();
     }
 
     @Test
@@ -115,27 +113,5 @@ public class ConcordiaTest {
         }
     }
 
-    private boolean isAlertPresent() {
-        try {
-            driver.switchTo().alert();
-            return true;
-        } catch (NoAlertPresentException e) {
-            return false;
-        }
-    }
 
-    private String closeAlertAndGetItsText() {
-        try {
-            Alert alert = driver.switchTo().alert();
-            String alertText = alert.getText();
-            if (acceptNextAlert) {
-                alert.accept();
-            } else {
-                alert.dismiss();
-            }
-            return alertText;
-        } finally {
-            acceptNextAlert = true;
-        }
-    }
 }

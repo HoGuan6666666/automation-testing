@@ -1,4 +1,4 @@
-package com.ecvictor.selenium.junit;
+package com.ecvictor.selenium.junit.classic;
 
 /**
  * Created by caoc on 3/18/2017.
