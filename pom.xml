@@ -7,7 +7,7 @@
 	<version>0.0.1</version>
 	<properties>
 		<testng.version>6.11</testng.version>
-		<rest-assured.version>3.0.2</rest-assured.version>
+		<rest-assured.version>3.0.3</rest-assured.version>
 		<scribejava-apis.version>2.5.3</scribejava-apis.version>
         <maven-surefire-plugin.version>2.20</maven-surefire-plugin.version>
         <junit.version>4.12</junit.version>
@@ -56,28 +56,22 @@
 			<!--<artifactId>pairwise</artifactId>-->
 			<!--<version>1.0</version>-->
 		<!--</dependency>-->
-
-		<!--<dependency>-->
-            <!--<groupId>com.retailmenot</groupId>-->
-            <!--<artifactId>pairwise</artifactId>-->
-            <!--<version>0.9</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.apache.commons</groupId>-->
-            <!--<artifactId>commons-lang3</artifactId>-->
-            <!--<version>3.1</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.slf4j</groupId>-->
-            <!--<artifactId>slf4j-api</artifactId>-->
-            <!--<version>1.6.6</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>ch.qos.logback</groupId>-->
-            <!--<artifactId>logback-classic</artifactId>-->
-            <!--<version>1.0.9</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.6.6</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.0.9</version>
+            <scope>test</scope>
+        </dependency>
         <!--Junit-->
         <dependency>
             <groupId>junit</groupId>
