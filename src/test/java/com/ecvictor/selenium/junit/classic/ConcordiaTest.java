@@ -1,4 +1,4 @@
-package com.ecvictor.selenium.junit;
+package com.ecvictor.selenium.junit.classic;
 
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
