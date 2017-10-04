@@ -27,7 +27,7 @@ public class DemoStoreTest {
 
     public static Object[][] credentials() {
 
-        return new Object[][]{{"testuser_1", "Test@123"}, {"testuser_2", "Test@123"}};
+        return new Object[][]{{"hogggtestng02", "1qazxsw2"}, {"hogggtestng02", "1qazxsw2"}};
 
     }
 
