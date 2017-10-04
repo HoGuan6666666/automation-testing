@@ -1,20 +1,60 @@
 package com.ecvictor.testng.employee;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
-import static org.junit.Assert.*;
+import static org.testng.AssertJUnit.assertEquals;
 
-/**
- * Created by ccao on 2017-08-19.
- */
 public class EmpBusinessLogicTest {
-    @Test
-    public void calculateYearlySalary() throws Exception {
+
+    private EmployeeDetails employeeDetails;
+    private EmpBusinessLogic empBusinessLogic;
+
+
+    @BeforeClass
+    public void setUp() throws Exception {
+        empBusinessLogic = new EmpBusinessLogic();
+        employeeDetails = new EmployeeDetails();
+
+    }
+
+    @AfterClass
+    public static void tearDown() throws Exception {
+        System.out.println("Testing Complete!");
     }
 
     @Test
-    public void calculateAppraisal() throws Exception {
+    public void calculateYearlySalary() throws Exception {
+        employeeDetails.setMonthlySalary(2000);
+        double salary = empBusinessLogic.calculateYearlySalary(employeeDetails);
+
+        assertEquals("leia's salary should be 24000", 24000,salary, 0.0); //delta是expected，actual的difference
+    }
+
+    @Test
+    public void calculateAppraisalLess() throws Exception {
+        employeeDetails.setMonthlySalary(2000);
+        double appraisal = empBusinessLogic.calculateAppraisal(employeeDetails);
+        assertEquals("leia", 500, appraisal, 0.0);
+    }
+
+    @Test
+    public void calculateAppraisalMore() throws Exception {
+        employeeDetails.setMonthlySalary(10000);
+        assertEquals("leia",1000, empBusinessLogic.calculateAppraisal(employeeDetails), 0.0);
+    }
+
+    @Test
+    public void getName() {
+        employeeDetails.setName("Leia");
+        assertEquals("Leia", employeeDetails.getName());
+    }
+
+    @Test
+    public void getAge() {
+        employeeDetails.setAge(20);
+        assertEquals(20, employeeDetails.getAge());
     }
 
 }
