@@ -35,7 +35,7 @@ public class DemoStoreTest {
 
     @Test(dataProvider = "Authentication")
 
-    public void demoStoreTest(String sUsername, String sPassword) {
+    public void demoStoreTest(String sUsername, String sPassword) throws InterruptedException {
 
         String chromeDriverLocation = System.getProperty("user.dir") + "/src/test/resources/drivers/chromedriver";
         System.out.println("chromeDriverLocation"+chromeDriverLocation);
@@ -45,6 +45,8 @@ public class DemoStoreTest {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         driver.get("http://www.store.demoqa.com");
+
+        Thread.sleep(500);
 
         driver.findElement(By.xpath(".//*[@id='account']/a")).click();
 
